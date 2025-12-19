@@ -2,21 +2,23 @@ import CurrentWeather  from './components/CurrentWeather/CurrentWeather';
 import DailyForecast from './components/DailyForecast/DailyForecast';
 import HourlyForecast from './components/HourlyForecast/HourlyForecast';
 import { useWeather } from './Hooks/useWeather';
+import { Button } from './UI/Button/Button';
+import {Input} from './UI/Input/Input';
 
 export default function App() {
   const { weatherData, isLoading, error, refetch, cityName, setCityName } = useWeather();
 
   return (
     <div>
-      <input 
+      <Input 
         type="text" 
         value={cityName} 
         onChange={(e) => setCityName(e.target.value)} 
       />
 
-      <button onClick={() => refetch()}>
+      <Button onClick={() => refetch()}>
         Search
-      </button>
+      </Button>
 
       {isLoading && <div>Loading...</div>}
       {error && <div>Error: {error.message}</div>}

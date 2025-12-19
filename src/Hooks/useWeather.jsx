@@ -42,7 +42,7 @@ export function useWeather(){
     
     queryFn: () => fetchWeather(cityName),
     
-    enabled: true, 
+    enabled: false, 
   });
 
  

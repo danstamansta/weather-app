@@ -6,7 +6,7 @@ export default function DailyForecast({ data }) {
     return (
     <div className="daily-list">
         <h3>Daily Forecast</h3>
-      {data.time.map((date, index) => (
+      {data.time.slice(1,7).map((date, index) => (
         <div key={date} className="day-card">
           <h3>{new Date(date).toLocaleDateString('en-US',{weekday: 'short'})}</h3>
 
